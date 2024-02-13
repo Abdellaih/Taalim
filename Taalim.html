@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    form legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    select, input[type="number"], input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Car Survey</h1>
+  <form>
+    <!-- 1. POSSESSION -->
+    <fieldset>
+      <legend>1. POSSESSION</legend>
+      <label for="possession">Vous possédez une voiture?</label><br>
+      <input type="radio" id="possession-oui" name="possession" value="Oui">
+      <label for="possession-oui">Oui</label><br>
+      <input type="radio" id="possession-non" name="possession" value="Non">
+      <label for="possession-non">Non</label><br>
+    </fieldset>
+
+    <!-- 2. APPARTENANCE -->
+    <fieldset>
+      <legend>2. APPARTENANCE</legend>
+      <label for="appartenance">À qui appartient la voiture?</label><br>
+      <select id="appartenance" name="appartenance">
+        <option value="A vous">A vous</option>
+        <option value="A votre société">A votre société</option>
+        <option value="A quelqu'un de votre famille">A quelqu'un de votre famille</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 3. MARQUE -->
+    <fieldset>
+      <legend>3. MARQUE</legend>
+      <label for="marque">Quelle est la marque de votre voiture?</label><br>
+      <select id="marque" name="marque">
+        <option value="Renault">Renault</option>
+        <option value="Peugeot">Peugeot</option>
+        <option value="Citroën">Citroën</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Fiat">Fiat</option>
+        <option value="Ford">Ford</option>
+        <option value="Toyota">Toyota</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Opel">Opel</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Autre">Autre</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 4. MARQUE_AUTRE -->
+    <fieldset>
+      <legend>4. MARQUE_AUTRE</legend>
+      <label for="marque-autre">Précisez la marque si "Autre" a été sélectionné</label><br>
+      <input type="text" id="marque-autre" name="marque-autre"><br>
+    </fieldset>
+
+    <!-- 5. TYPE AUTO -->
+    <fieldset>
+      <legend>5. TYPE AUTO</legend>
+      <label for="type-auto">Est-ce que votre voiture est neuve ou d'occasion?</label><br>
+      <select id="type-auto" name="type-auto">
+        <option value="Neuve">Neuve</option>
+        <option value="Occasion">Occasion</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 6. ANCIENNETE -->
+    <fieldset>
+      <legend>6. ANCIENNETE</legend>
+      <label for="anciennete">Depuis combien de temps possédez-vous votre voiture?</label><br>
+      <input type="number" id="anciennete" name="anciennete"><br>
+    </fieldset>
+
+    <!-- 7. PUISSANCE -->
+    <fieldset>
+      <legend>7. PUISSANCE</legend>
+      <label for="puissance">Quelle est la puissance de votre voiture?</label><br>
+      <select id="puissance" name="puissance">
+        <option value="De 4 CV">De 4 CV</option>
+        <option value="4 à 5 CV">4 à 5 CV</option>
+        <option value="6 à 7 CV">6 à 7 CV</option>
+        <option value="8 à 9 CV">8 à 9 CV</option>
+        <option value="10 CV et plus">10 CV et plus</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 8. CARBURANT -->
+    <fieldset>
+      <legend>8. CARBURANT</legend>
+      <label for="carburant">Quel type de carburant utilise votre voiture?</label><br>
+      <select id="carburant" name="carburant">
+        <option value="Sans plomb">Sans plomb</option>
+        <option value="Gazole">Gazole</option>
+        <option value="GPL">GPL</option>
+        <option value="Essence">Essence</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 9. OPTIONS -->
+    <fieldset>
+      <legend>9. OPTIONS</legend>
+      <label for="options">Quelles options possède votre voiture?</label><br>
+      <input type="checkbox" id="jantes-alu" name="options" value="Jantes alu">
+      <label for="jantes-alu">Jantes alu</label><br>
+      <input type="checkbox" id="vitres-teintees" name="options" value="Vitres teintées">
+      <label for="vitres-teintees">Vitres teintées</label><br>
+      <input type="checkbox" id="lecteur-cd" name="options" value="Lecteur CD">
+      <label for="lecteur-cd">Lecteur CD</label><br>
+    </fieldset>
+
+    <!-- 10. VITESSE -->
+    <fieldset>
+      <legend>10. VITESSE</legend>
+      <label for="vitesse">Dans quelle mesure votre voiture répond-elle en termes de vitesse?</label><br>
+      <select id="vitesse" name="vitesse">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+    </fieldset>
+
+    <!-- Your Car Section -->
+    <fieldset>
+      <legend>VOTRE SATISFACTION</legend>
+
+      <!-- 11. VITESSE -->
+      <label for="vitesse-satisfaction">Dans quelle mesure votre voiture répond-elle en termes de vitesse?</label><br>
+      <select id="vitesse-satisfaction" name="vitesse-satisfaction">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 12. CONFORT -->
+      <label for="confort">Dans quelle mesure votre voiture est-elle confortable?</label><br>
+      <select id="confort" name="confort">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 13. SÉCURITÉ -->
+      <label for="securite">Dans quelle mesure votre voiture est-elle sécurisée?</label><br>
+      <select id="securite" name="securite">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 14. TENUE DE ROUTE -->
+      <label for="tenue-route">Dans quelle mesure votre voiture a-t-elle une bonne tenue de route?</label><br>
+      <select id="tenue-route" name="tenue-route">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 15. ESPACE -->
+      <label for="espace">Dans quelle mesure votre voiture offre-t-elle un bon espace intérieur?</label><br>
+      <select id="espace" name="espace">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 16. ESTHÉTIQUE -->
+      <label for="esthetique">Dans quelle mesure votre voiture est-elle esthétique?</label><br>
+      <select id="esthetique" name="esthetique">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 17. CONSOMMATION -->
+      <label for="consommation">Dans quelle mesure votre voiture consomme-t-elle de carburant?</label><br>
+      <select id="consommation" name="consommation">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 18. POLLUTION -->
+      <label for="pollution">Dans quelle mesure votre voiture pollue-t-elle l'environnement?</label><br>
+      <select id="pollution" name="pollution">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 19. PERFORMANCE_ENTRETIEN -->
+      <label for="performance-entretien">Dans quelle mesure votre voiture est-elle facile à entretenir?</label><br>
+      <select id="performance-entretien" name="performance-entretien">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 20. NOTE -->
+      <label for="note">Dans quelle mesure êtes-vous satisfait de votre voiture?</label><br>
+      <select id="note" name="note">
+        <option value="Pas du tout">Pas du tout</option>
+        <option value="Plutôt non">Plutôt non</option>
+        <option value="Moyennement">Moyennement</option>
+        <option value="Plutôt oui">Plutôt oui</option>
+        <option value="Tout à fait">Tout à fait</option>
+      </select><br>
+
+      <!-- 21. ENTRETIEN -->
+      <label for="entretien">Combien dépensez-vous en moyenne par mois pour l'entretien de votre voiture?</label><br>
+      <input type="number" id="entretien" name="entretien"><br>
+    </fieldset>
+
+    <!-- 22. KILOMÉTRAGE -->
+    <fieldset>
+      <legend>22. KILOMÉTRAGE</legend>
+      <label for="kilometrage">Quel est le kilométrage actuel de votre voiture?</label><br>
+      <input type="number" id="kilometrage" name="kilometrage"><br>
+    </fieldset>
+
+    <!-- 23. DÉPENSE -->
+    <fieldset>
+      <legend>23. DÉPENSE</legend>
+      <label for="depense">Quel est votre budget mensuel total pour votre voiture (y compris carburant, assurance, entretien, etc.) ?</label><br>
+      <input type="number" id="depense" name="depense"><br>
+    </fieldset>
+
+    <!-- 24. CRITÈRES -->
+    <fieldset>
+      <legend>24. CRITÈRES</legend>
+      <label for="criteres">Quels critères sont importants pour vous lors du choix de votre voiture idéale?</label><br>
+      <input type="text" id="criteres" name="criteres"><br>
+    </fieldset>
+
+    <!-- 25. FIDÉLITÉ -->
+    <fieldset>
+      <legend>25. FIDÉLITÉ</legend>
+      <label for="fidelite">Êtes-vous fidèle à une marque de voiture? Si oui, laquelle?</label><br>
+      <input type="text" id="fidelite" name="fidelite"><br>
+    </fieldset>
+
+    <!-- 26. VOITURE IDÉALE -->
+    <fieldset>
+      <legend>26. VOITURE IDÉALE</legend>
+      <label for="voiture-ideale">Quels critères sont importants pour vous lors du choix de votre voiture idéale?</label><br>
+      <input type="text" id="voiture-ideale" name="voiture-ideale"><br>
+    </fieldset>
+
+    <!-- 27. SEXE -->
+    <fieldset>
+      <legend>27. SEXE</legend>
+      <label for="sexe">Quel est votre sexe?</label><br>
+      <select id="sexe" name="sexe">
+        <option value="Homme">Homme</option>
+        <option value="Femme">Femme</option>
+        <option value="Autre">Autre</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 28. DATE NAISSANCE -->
+    <fieldset>
+      <legend>28. DATE NAISSANCE</legend>
+      <label for="date-naissance">Quelle est votre date de naissance?</label><br>
+      <input type="date" id="date-naissance" name="date-naissance"><br>
+    </fieldset>
+
+    <!-- 29. CSP -->
+    <fieldset>
+      <legend>29. CSP</legend>
+      <label for="csp">Quelle est votre catégorie socioprofessionnelle?</label><br>
+      <input type="text" id="csp" name="csp"><br>
+    </fieldset>
+
+    <!-- 30. CODE POSTAL -->
+    <fieldset>
+      <legend>30. CODE POSTAL</legend>
+      <label for="code-postal">Quel est votre code postal?</label><br>
+      <input type="text" id="code-postal" name="code-postal"><br>
+    </fieldset>
+
+    <!-- 31. DATE_SAISIE -->
+    <fieldset>
+      <legend>31. DATE_SAISIE</legend>
+      <label for="date-saisie">À quelle date avez-vous saisi ces informations?</label><br>
+      <input type="date" id="date-saisie" name="date-saisie"><br>
+    </fieldset>
+
+    <!-- 32. REDRESSEMENT -->
+    <fieldset>
+      <legend>32. REDRESSEMENT</legend>
+      <label for="redressement">Avez-vous déjà eu recours à un redressement de votre voiture?</label><br>
+      <select id="redressement" name="redressement">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 33. SINISTRE -->
+    <fieldset>
+      <legend>33. SINISTRE</legend>
+      <label for="sinistre">Avez-vous déjà eu un sinistre avec cette voiture?</label><br>
+      <select id="sinistre" name="sinistre">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 34. SINISTRE_ANNEE -->
+    <fieldset>
+      <legend>34. SINISTRE_ANNEE</legend>
+      <label for="sinistre-annee">Si oui, en quelle année?</label><br>
+      <input type="number" id="sinistre-annee" name="sinistre-annee"><br>
+    </fieldset>
+
+    <!-- 35. REPARATION -->
+    <fieldset>
+      <legend>35. REPARATION</legend>
+      <label for="reparation">Avez-vous déjà fait des réparations sur cette voiture?</label><br>
+      <select id="reparation" name="reparation">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 36. REPARATION_TYPE -->
+    <fieldset>
+      <legend>36. REPARATION_TYPE</legend>
+      <label for="reparation-type">Si oui, quel type de réparations?</label><br>
+      <input type="text" id="reparation-type" name="reparation-type"><br>
+    </fieldset>
+
+    <!-- 37. CARTE_GRISE -->
+    <fieldset>
+      <legend>37. CARTE_GRISE</legend>
+      <label for="carte-grise">Êtes-vous le propriétaire de la carte grise?</label><br>
+      <select id="carte-grise" name="carte-grise">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 38. ASSURANCE -->
+    <fieldset>
+      <legend>38. ASSURANCE</legend>
+      <label for="assurance">Qui est le détenteur de l'assurance?</label><br>
+      <select id="assurance" name="assurance">
+        <option value="Vous">Vous</option>
+        <option value="Société">Société</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 39. CONTRAT -->
+    <fieldset>
+      <legend>39. CONTRAT</legend>
+      <label for="contrat">Quel type de contrat d'assurance avez-vous?</label><br>
+      <input type="text" id="contrat" name="contrat"><br>
+    </fieldset>
+
+    <!-- 40. BONUS -->
+    <fieldset>
+      <legend>40. BONUS</legend>
+      <label for="bonus">Avez-vous un bonus-malus?</label><br>
+      <select id="bonus" name="bonus">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 41. ANTÉCÉDENTS -->
+    <fieldset>
+      <legend>41. ANTÉCÉDENTS</legend>
+      <label for="antecedents">Avez-vous des antécédents d'accidents responsables?</label><br>
+      <select id="antecedents" name="antecedents">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 42. MARQUE_HISTO -->
+    <fieldset>
+      <legend>42. MARQUE_HISTO</legend>
+      <label for="marque-histo">Quelle est la marque de la voiture que vous avez possédée précédemment?</label><br>
+      <input type="text" id="marque-histo" name="marque-histo"><br>
+    </fieldset>
+
+    <!-- 43. MODELE_HISTO -->
+    <fieldset>
+      <legend>43. MODELE_HISTO</legend>
+      <label for="modele-histo">Quel était le modèle de la voiture que vous avez possédée précédemment?</label><br>
+      <input type="text" id="modele-histo" name="modele-histo"><br>
+    </fieldset>
+
+    <!-- 44. ANCIENNETE_HISTO -->
+    <fieldset>
+      <legend>44. ANCIENNETE_HISTO</legend>
+      <label for="anciennete-histo">Depuis combien de temps avez-vous possédé votre voiture précédente?</label><br>
+      <input type="number" id="anciennete-histo" name="anciennete-histo"><br>
+    </fieldset>
+
+    <!-- 45. MOTIF_CHANGE -->
+    <fieldset>
+      <legend>45. MOTIF_CHANGE</legend>
+      <label for="motif-change">Pourquoi avez-vous changé de voiture?</label><br>
+      <input type="text" id="motif-change" name="motif-change"><br>
+    </fieldset>
+
+    <!-- 46. PROCHAINE_VOITURE -->
+    <fieldset>
+      <legend>46. PROCHAINE_VOITURE</legend>
+      <label for="prochaine-voiture">Quelle est la marque de votre prochaine voiture?</label><br>
+      <input type="text" id="prochaine-voiture" name="prochaine-voiture"><br>
+    </fieldset>
+
+    <!-- 47. BUDGET -->
+    <fieldset>
+      <legend>47. BUDGET</legend>
+      <label for="budget">Quel est votre budget pour l'achat de votre prochaine voiture?</label><br>
+      <input type="number" id="budget" name="budget"><br>
+    </fieldset>
+
+    <!-- 48. VOITURE_USAGEE -->
+    <fieldset>
+      <legend>48. VOITURE_USAGEE</legend>
+      <label for="voiture-usagee">Pensez-vous acheter une voiture neuve ou d'occasion?</label><br>
+      <select id="voiture-usagee" name="voiture-usagee">
+        <option value="Neuve">Neuve</option>
+        <option value="Occasion">Occasion</option>
+      </select><br>
+    </fieldset>
+
+    <!-- 49. COMMENTAIRE -->
+    <fieldset>
+      <legend>49. COMMENTAIRE</legend>
+      <label for="commentaire">Avez-vous des commentaires ou des suggestions?</label><br>
+      <textarea id="commentaire" name="commentaire" rows="4" cols="50"></textarea><br>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</body>
+</html>
+
